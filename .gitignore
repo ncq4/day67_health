@@ -1,0 +1,8 @@
+# Project exclude paths
+/day67_health_backend/target/
+/day67_health_common/target/
+/day67_health_interface/target/
+/day67_health_jobs/target/
+/day67_health_mobile/target/
+/day67_health_service_provider/target/
+/freemarker/target/
