@@ -7,7 +7,6 @@
     <file type="web" url="file://$PROJECT_DIR$/day67_health_mobile" />
     <file type="web" url="file://$PROJECT_DIR$/day67_health_service_provider" />
     <file type="web" url="file://$PROJECT_DIR$/freemarker" />
-    <file type="web" url="file://$PROJECT_DIR$/springsecuritydemo" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -16,7 +15,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/springsecuritydemo/pom.xml" />
       </list>
     </option>
   </component>

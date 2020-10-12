@@ -25,6 +25,7 @@ public class CheckItemController {
     private CheckItemService checkItemService;
     //新增
     @RequestMapping("/add")
+    @PreAuthorize("hasAuthority('CHECKITEM_ADD')")//权限校验
     public Result add(@RequestBody CheckItem checkItem){
         try{
             checkItemService.add(checkItem);//发送请求
@@ -36,6 +37,7 @@ public class CheckItemController {
     }
 
     //分页查询
+    @PreAuthorize("hasAuthority('CHECKITEM_QUERY')")//权限校验
     @RequestMapping("/findPage")
     public PageResult findPage(@RequestBody QueryPageBean queryPageBean){
         return checkItemService.findPage(queryPageBean);
@@ -57,6 +59,7 @@ public class CheckItemController {
 
     //根据id查询检查项
     @RequestMapping("/findById")
+
     public Result findById(Integer id){
         try{
             CheckItem checkItem = checkItemService.findById(id);//发送请求
@@ -69,6 +72,7 @@ public class CheckItemController {
 
     //编辑
     @RequestMapping("/edit")
+    @PreAuthorize("hasAuthority('CHECKITEM_EDIT')")//权限校验
     public Result edit(@RequestBody CheckItem checkItem){
         try{
             checkItemService.edit(checkItem);//发送请求
