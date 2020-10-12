@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="day67_health_interface" />
+        <module name="springsecuritydemo" />
         <module name="day67_health_common" />
         <module name="day67_health_jobs" />
         <module name="freemarker" />

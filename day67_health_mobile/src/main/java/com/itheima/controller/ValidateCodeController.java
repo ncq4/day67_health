@@ -36,4 +36,23 @@ public class ValidateCodeController {
             return new Result(false,MessageConstant.SEND_VALIDATECODE_FAIL);
         }
     }
+    @RequestMapping("/send4Login")
+    public Result send4Login(String telephone){
+        //使用验证码工具类获取一个长度为4的验证码
+        String code = ValidateCodeUtils.generateValidateCode(4).toString();
+        try {
+            //使用发送短信工具类向手机发送验证码
+            SMSUtils.sendShortMessage(SMSUtils.VALIDATE_CODE,telephone,code);
+            //将验证码保存在redis中,其中telephone+ RedisMessageConstant.SENDTYPE_ORDER为key,
+            // RedisMessageConstant.SENDTYPE_ORDER是为了标识这是登录用的验证码
+            //300是指300秒,在redis里保存300秒后销毁
+            //code是保存的数据
+            System.out.println(code);
+            jedisPool.getResource().setex(telephone+ RedisMessageConstant.SENDTYPE_LOGIN,300,code);
+            return new Result(true, MessageConstant.SEND_VALIDATECODE_SUCCESS);
+        } catch (ClientException e) {
+            e.printStackTrace();
+            return new Result(false,MessageConstant.SEND_VALIDATECODE_FAIL);
+        }
+    }
 }
