@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="day67_health_interface" />
-        <module name="freemarker" />
         <module name="day67_health_common" />
         <module name="day67_health_jobs" />
+        <module name="freemarker" />
         <module name="day67_health_backend" />
         <module name="day67_health_service_provider" />
         <module name="day67_health_mobile" />

@@ -60,6 +60,7 @@
 
     <!--配置认证管理器-->
     <security:authentication-manager>
+        <!--因为是给service加了注解,就能找到springSecurityUserService,注意首字母小写-->
         <security:authentication-provider user-service-ref="springSecurityUserService">
             <!--指定密码加密策略-->
             <security:password-encoder ref="passwordEncoder" />
@@ -72,5 +73,4 @@
 
     <!--开启注解方式权限控制-->
     <security:global-method-security pre-post-annotations="enabled" />
-
 </beans>

@@ -125,6 +125,8 @@ public class SetmealServiceImpl implements SetmealService {
         return setmealDao.findById4Detail(id);
     }
 
+
+
     //设置套餐和检查组多对多关联关系
     public void setSetmealAndCheckGroup(Integer setmealId,Integer[] checkgroupIds){
         if(checkgroupIds != null && checkgroupIds.length > 0){
@@ -135,5 +137,10 @@ public class SetmealServiceImpl implements SetmealService {
                 setmealDao.setSetmealAndCheckGroup(map);
             }
         }
+    }
+
+    //查询套餐占比统计数据
+    public List<Map> getSetmealReport() {
+        return setmealDao.getSetmealReport();
     }
 }
